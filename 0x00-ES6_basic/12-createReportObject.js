@@ -3,9 +3,9 @@ export default function createReportObject(employeesList) {
     throw new Error('Invalid input: employeesList must be an array.');
   }
 
-  let allEmployees = {};
+  const allEmployees = {};
 
-  employeesList.forEach(employee => {
+  employeesList.forEach((employee) => {
     const { name, department } = employee;
     if (!allEmployees[department]) {
       allEmployees[department] = [];
@@ -13,13 +13,10 @@ export default function createReportObject(employeesList) {
     allEmployees[department].push(name);
   });
 
-  const getNumberOfDepartments = () => {
-    return Object.keys(allEmployees).length;
-  };
+  const getNumberOfDepartments = () => Object.keys(allEmployees).length;
 
   return {
     allEmployees: { ...allEmployees },
     getNumberOfDepartments,
   };
 }
-
