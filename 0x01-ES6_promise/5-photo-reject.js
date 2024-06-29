@@ -1,6 +1,4 @@
-import { uploadPhoto as utilsUploadPhoto, createUser } from './utils.js';
-
-export default function uploadPhotoWithError(filename) {
+export default function uploadPhoto(filename) {
   return new Promise((resolve, reject) => {
     reject(new Error(`${filename} cannot be processed`));
   });
