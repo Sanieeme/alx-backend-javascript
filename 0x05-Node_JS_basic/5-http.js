@@ -15,7 +15,10 @@ const app = http.createServer(async (req, res) => {
       const results = await countStudents(process.argv[2]);
       res.end(results);
     } catch (error) {
-      res.end(error.message);
+      // Log the error for debugging purposes
+      console.error('Error fetching students:', error);
+      res.statusCode = 500;
+      res.end('Internal Server Error');
     }
   } else {
     res.statusCode = 404;
@@ -26,7 +29,7 @@ const app = http.createServer(async (req, res) => {
 
 const port = 1245;
 app.listen(port, () => {
-  console.log(`${port}`);
+  console.log(`Server running at http://localhost:${port}/`);
 });
 
 module.exports = app;

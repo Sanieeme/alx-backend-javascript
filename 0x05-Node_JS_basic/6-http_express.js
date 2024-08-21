@@ -7,8 +7,9 @@ app.get('/', (req, res) => {
 });
 
 const port = 1245;
+
 app.listen(port, () => {
-  console.log(`${port}`);
+  console.log(`Server is running at http://localhost:${port}/`);
 });
 
 module.exports = app;
