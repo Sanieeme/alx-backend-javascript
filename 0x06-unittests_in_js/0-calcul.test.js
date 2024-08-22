@@ -6,9 +6,9 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1, 2), 3);
 });
   it('should handle negative numbers', function() {
-    assert.strictEqual(calculateNumber(-1, -2), -3);
+    assert.strictEqual(calculateNumber(-1.2, -3.7), -5);
   });
   it('should handle negative and positive', function() {
-    assert.strictEqual(calculateNumber(2, -1), 1);
+    assert.strictEqual(calculateNumber(1.5, -1.0), 1);
   });
 });
