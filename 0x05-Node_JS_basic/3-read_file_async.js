@@ -1,3 +1,7 @@
+/**
+ * function named countStudents. It should accept a path in argument
+ * param {string} filePath - file path
+ */
 const fs = require('fs');
 const path = require('path');
 
@@ -6,7 +10,7 @@ async function countStudents(filePath) {
     const data = fs.readFileSync(filePath, 'utf8');
     const lines = data.trim().split('\n');
     if (lines.length === 0) {
-      throw new Error('Cannot load the database');
+      throw new Error('Error: Cannot load the database');
     }
 
     const studentsByField = {};
@@ -33,7 +37,7 @@ async function countStudents(filePath) {
       console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
     }
   } catch (error) {
-    console.error('Cannot load the database');
+    console.error('Error: Cannot load the database');
   }
 }
 
